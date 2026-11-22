@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saltbush Cleaning Co, House and Bond Cleaning, Priced in 30 Seconds</title>
+<meta name="description" content="House, bond and commercial cleaning in Brisbane with an exact price on screen in 30 seconds. Regular, deep and bond cleans, plus offices, clinics and strata cleaned after hours.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-head">
+  <a class="wordmark" href="#top" aria-label="Saltbush Cleaning Co, home">saltbush</a>
+  <nav class="main-nav" aria-label="Main">
+    <a href="#quote">House cleans</a>
+    <a href="#bond">Bond cleans</a>
+    <a href="#commercial">Commercial</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a class="btn btn-yellow btn-sm" href="#quote">See my price</a>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="hero-copy">
+      <p class="review-line"><span class="stars" aria-hidden="true">★★★★★</span> 4.9 from 515 Google reviews</p>
+      <h1>House and bond cleaning, <span class="hl">priced in 30 seconds.</span></h1>
+      <p class="sub">Pick your bedrooms and bathrooms, see the exact price, and book a time. The same two cleaners come every visit, bring everything and text you 20 minutes out. Offices and strata too.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-navy" href="#quote">See my price <span aria-hidden="true">→</span></a>
+        <a class="btn btn-outline" href="#bond">Moving out? Bond cleans</a>
+      </div>
+      <ul class="trust-list">
+        <li><span class="tick" aria-hidden="true">✓</span> Police checked, employee staff</li>
+        <li><span class="tick" aria-hidden="true">✓</span> 72-hour bond re-clean guarantee</li>
+        <li><span class="tick" aria-hidden="true">✓</span> $20m public liability insured</li>
+        <li><span class="tick" aria-hidden="true">✓</span> No lock-in, skip a clean free</li>
+      </ul>
+    </div>
+    <div class="hero-photo">
+      <img src="img/kitchen.jpg" alt="A spotless white tiled kitchen with pale timber cabinets after a Saltbush clean" width="1200" height="900">
+      <div class="ring" id="loadRing" role="img" aria-label="Loading your instant price">
+        <svg viewBox="0 0 120 120" width="120" height="120" aria-hidden="true">
+          <circle class="ring-track" cx="60" cy="60" r="52"></circle>
+          <circle class="ring-fill" id="ringFill" cx="60" cy="60" r="52"></circle>
+        </svg>
+        <span class="ring-num" id="ringNum">0%</span>
+      </div>
+      <div class="booked-card" id="bookedCard" hidden>
+        <p class="booked-head"><span class="tick tick-sm" aria-hidden="true">✓</span> Booked in</p>
+        <p class="booked-line">Regular clean · Tue 9:00 am</p>
+        <p class="booked-line booked-price">3 bed, 2 bath · <strong>$220</strong></p>
+      </div>
+      <span class="photo-tag">Police checked staff</span>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-band" aria-label="Saltbush in numbers">
+    <div class="wrap stats-grid" id="statsGrid">
+      <button class="stat" type="button" data-stat="cleans" aria-expanded="false">
+        <span class="stat-num"><span class="count" data-target="2340">0</span></span>
+        <span class="stat-label">cleans done in the last 12 months</span>
+      </button>
+      <button class="stat" type="button" data-stat="bond" aria-expanded="false">
+        <span class="stat-num"><span class="count" data-target="97">0</span>%</span>
+        <span class="stat-label">of bond cleans passed first inspection</span>
+      </button>
+      <button class="stat" type="button" data-stat="team" aria-expanded="false">
+        <span class="stat-num"><span class="count" data-target="14">0</span></span>
+        <span class="stat-label">local cleaners, all police checked</span>
+      </button>
+      <button class="stat" type="button" data-stat="years" aria-expanded="false">
+        <span class="stat-num"><span class="count" data-target="9">0</span> yrs</span>
+        <span class="stat-label">cleaning local homes</span>
+      </button>
+    </div>
+    <div class="wrap">
+      <div class="stat-panel" id="statPanel" hidden>
+        <p class="stat-panel-title" id="statPanelTitle"></p>
+        <ul class="stat-panel-lines" id="statPanelLines"></ul>
+        <p class="stat-panel-total" id="statPanelTotal"></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOME QUOTE CALCULATOR -->
+  <section class="section wrap" id="quote">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Price and book</p>
+        <h2>Your exact price, <span class="hl">then pick a time.</span></h2>
+      </div>
+      <p class="section-side">No quote by email, no waiting on hold. Set your home up once and the price builds itself, line by line, before you choose a time.</p>
+    </div>
+
+    <div class="quote-grid">
+      <form class="form-card" id="bookForm" novalidate>
+        <ol class="steps-nav" aria-label="Booking steps">
+          <li><button type="button" class="step-tab is-active" data-step="1">1. Your home</button></li>
+          <li><button type="button" class="step-tab" data-step="2">2. Date and time</button></li>
+          <li><button type="button" class="step-tab" data-step="3">3. Details</button></li>
+        </ol>
+
+        <!-- STEP 1 -->
+        <div class="step-panel" data-panel="1">
+          <fieldset>
+            <legend>Type of clean</legend>
+            <div class="clean-types" role="radiogroup" aria-label="Type of clean">
+              <label class="type-card">
+                <input type="radio" name="cleanType" value="regular" checked>
+                <span class="type-name">Regular</span>
+                <span class="type-sub">Every week or two</span>
+              </label>
+              <label class="type-card">
+                <input type="radio" name="cleanType" value="deep">
+                <span class="type-name">Deep clean</span>
+                <span class="type-sub">First clean, spring clean</span>
+              </label>
+              <label class="type-card">
+                <input type="radio" name="cleanType" value="bond">
+                <span class="type-name">Bond clean</span>
+                <span class="type-sub">Moving out, agent checked</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Size of home</legend>
+            <div class="steppers">
+              <div class="stepper-row">
+                <span class="stepper-label">Bedrooms</span>
+                <div class="stepper">
+                  <button type="button" class="step-btn" data-stepper="bed" data-dir="-1" aria-label="Fewer bedrooms">−</button>
+                  <span class="step-val" id="bedVal">3</span>
+                  <button type="button" class="step-btn" data-stepper="bed" data-dir="1" aria-label="More bedrooms">+</button>
+                </div>
+              </div>
+              <div class="stepper-row">
+                <span class="stepper-label">Bathrooms</span>
+                <div class="stepper">
+                  <button type="button" class="step-btn" data-stepper="bath" data-dir="-1" aria-label="Fewer bathrooms">−</button>
+                  <span class="step-val" id="bathVal">2</span>
+                  <button type="button" class="step-btn" data-stepper="bath" data-dir="1" aria-label="More bathrooms">+</button>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset id="freqField">
+            <legend>How often?</legend>
+            <div class="freq-row" role="radiogroup" aria-label="How often">
+              <label class="pill-opt"><input type="radio" name="freq" value="weekly"><span>Weekly <em>save 20%</em></span></label>
+              <label class="pill-opt"><input type="radio" name="freq" value="fortnightly" checked><span>Fortnightly <em>save 12%</em></span></label>
+              <label class="pill-opt"><input type="radio" name="freq" value="monthly"><span>Monthly <em>save 6%</em></span></label>
+              <label class="pill-opt"><input type="radio" name="freq" value="once"><span>Just once</span></label>
+            </div>
+            <p class="freq-note" id="freqNote" hidden>Bond cleans are a one-off clean, so no frequency saving applies.</p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Extras</legend>
+            <div class="extras">
+              <label class="extra-row"><input type="checkbox" class="extra" value="oven"><span class="extra-name">Inside the oven</span><span class="extra-price">+$65</span></label>
+              <label class="extra-row"><input type="checkbox" class="extra" value="fridge"><span class="extra-name">Inside the fridge</span><span class="extra-price">+$39</span></label>
+              <label class="extra-row"><input type="checkbox" class="extra" value="windows"><span class="extra-name">Inside windows and tracks</span><span class="extra-price">+$55</span></label>
+              <label class="extra-row"><input type="checkbox" class="extra" value="balcony"><span class="extra-name">Balcony or patio</span><span class="extra-price">+$45</span></label>
+              <label class="extra-row"><input type="checkbox" class="extra" value="carpet"><span class="extra-name">Carpet steam, per bedroom</span><span class="extra-price">+$44 <small>per bed</small></span></label>
+              <label class="extra-row"><input type="checkbox" class="extra" value="linen"><span class="extra-name">Change bed linen</span><span class="extra-price">+$25</span></label>
+            </div>
+          </fieldset>
+
+          <div class="step-actions">
+            <button type="button" class="btn btn-navy" data-goto="2">Choose a time <span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+
+        <!-- STEP 2 -->
+        <div class="step-panel" data-panel="2" hidden>
+          <fieldset>
+            <legend>Pick a day</legend>
+            <label class="field-label" for="bookDate">Clean date</label>
+            <input class="text-input" type="date" id="bookDate" name="bookDate">
+            <p class="field-error" id="dateError" hidden>Choose a date from today onwards.</p>
+          </fieldset>
+          <fieldset>
+            <legend>Arrival window</legend>
+            <div class="freq-row" role="radiogroup" aria-label="Arrival window">
+              <label class="pill-opt"><input type="radio" name="window" value="7:00 to 9:00 am"><span>7 to 9 am</span></label>
+              <label class="pill-opt"><input type="radio" name="window" value="9:00 to 11:00 am" checked><span>9 to 11 am</span></label>
+              <label class="pill-opt"><input type="radio" name="window" value="11:00 am to 1:00 pm"><span>11 am to 1 pm</span></label>
+              <label class="pill-opt"><input type="radio" name="window" value="1:00 to 3:00 pm"><span>1 to 3 pm</span></label>
+            </div>
+            <p class="hint">We text you 20 minutes before we arrive, every visit.</p>
+          </fieldset>
+          <fieldset>
+            <legend>How do we get in?</legend>
+            <div class="freq-row" role="radiogroup" aria-label="Access">
+              <label class="pill-opt"><input type="radio" name="access" value="I will be home" checked><span>I will be home</span></label>
+              <label class="pill-opt"><input type="radio" name="access" value="Key in the lockbox"><span>Key in lockbox</span></label>
+              <label class="pill-opt"><input type="radio" name="access" value="Garage code in the notes"><span>Garage code</span></label>
+            </div>
+          </fieldset>
+          <div class="step-actions">
+            <button type="button" class="btn btn-ghost" data-goto="1">Back</button>
+            <button type="button" class="btn btn-navy" data-goto="3">Your details <span aria-hidden="true">→</span></button>
+          </div>
+        </div>
+
+        <!-- STEP 3 -->
+        <div class="step-panel" data-panel="3" hidden>
+          <div class="fields-grid">
+            <div>
+              <label class="field-label" for="bkName">Full name</label>
+              <input class="text-input" type="text" id="bkName" name="bkName" autocomplete="name" placeholder="Alex Morgan">
+              <p class="field-error" id="nameError" hidden>Add your name so we know who to text.</p>
+            </div>
+            <div>
+              <label class="field-label" for="bkPhone">Mobile</label>
+              <input class="text-input" type="tel" id="bkPhone" name="bkPhone" autocomplete="tel" placeholder="04xx xxx xxx">
+              <p class="field-error" id="phoneError" hidden>Add a valid mobile, at least 10 digits.</p>
+            </div>
+            <div>
+              <label class="field-label" for="bkEmail">Email</label>
+              <input class="text-input" type="email" id="bkEmail" name="bkEmail" autocomplete="email" placeholder="you@example.com">
+              <p class="field-error" id="emailError" hidden>Add a valid email for the photo report.</p>
+            </div>
+            <div>
+              <label class="field-label" for="bkAddress">Street address</label>
+              <input class="text-input" type="text" id="bkAddress" name="bkAddress" autocomplete="street-address" placeholder="12 Example Street, Paddington">
+              <p class="field-error" id="addressError" hidden>Add the address we are cleaning.</p>
+            </div>
+          </div>
+          <label class="field-label" for="bkNotes">Anything we should know? <span class="optional">Optional</span></label>
+          <textarea class="text-input" id="bkNotes" name="bkNotes" rows="3" placeholder="Gate code, pets, parking, the oven has not been touched since 2019..."></textarea>
+          <div class="step-actions">
+            <button type="button" class="btn btn-ghost" data-goto="2">Back</button>
+            <button type="submit" class="btn btn-yellow">Book my clean</button>
+          </div>
+        </div>
+
+        <!-- CONFIRMATION -->
+        <div class="step-panel confirm" data-panel="done" hidden>
+          <p class="confirm-tick" aria-hidden="true">✓</p>
+          <h3 id="confirmTitle">You are booked in.</h3>
+          <p class="confirm-ref">Booking reference <strong id="confirmRef">SB-0000</strong></p>
+          <ul class="confirm-list" id="confirmList"></ul>
+          <p class="confirm-note">A confirmation text is on its way to your mobile. Your cleaners will text again 20 minutes before they arrive.</p>
+          <div class="step-actions">
+            <button type="button" class="btn btn-navy" id="bookAgain">Book another clean</button>
+          </div>
+        </div>
+      </form>
+
+      <aside class="price-card" aria-label="Your live price">
+        <img class="drift drift-price" src="img/spray.png" alt="" aria-hidden="true" data-drift="0.5">
+        <div class="price-head">
+          <p class="price-micro">Fixed clean, fixed price</p>
+          <label class="switch-wrap">
+            <span class="switch-label">Photo report</span>
+            <span class="switch">
+              <input type="checkbox" id="photoToggle" checked>
+              <span class="switch-track" aria-hidden="true"></span>
+            </span>
+          </label>
+        </div>
+        <p class="price-total" id="priceTotal">$220</p>
+        <p class="price-per" id="pricePer">per clean, GST included</p>
+        <ul class="breakdown" id="breakdown"></ul>
+        <div class="price-facts">
+          <p><span class="fact-ico" aria-hidden="true">◷</span> <span id="factDuration">4.5 hrs with a team of 2</span></p>
+          <p><span class="fact-ico" aria-hidden="true">▣</span> <span id="factPhoto">Photo report sent after every clean</span></p>
+          <p><span class="fact-ico" aria-hidden="true">✓</span> We bring everything, products and gear</p>
+        </div>
+        <p class="price-note">No lock-in. Skip or reschedule free up to 24 hours before.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- BOND -->
+  <section class="section wrap" id="bond">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Bond cleans</p>
+        <h2>Built around the <span class="hl">entry condition report.</span></h2>
+      </div>
+      <p class="section-side">Your agent checks the property against the entry condition report, item by item. So do we. Every bond clean is worked through room by room against that report, photographed as we go, and backed for 72 hours.</p>
+    </div>
+    <div class="bond-grid">
+      <div class="bond-left">
+        <div class="tiles" role="group" aria-label="Bond clean prices by home size">
+          <button type="button" class="tile" data-bond-bed="1" data-bond-bath="1"><span class="tile-size">1 bed, 1 bath</span><span class="tile-price">$338</span><span class="tile-sub">Bond clean</span></button>
+          <button type="button" class="tile" data-bond-bed="2" data-bond-bath="1"><span class="tile-size">2 bed, 1 bath</span><span class="tile-price">$419</span><span class="tile-sub">Bond clean</span></button>
+          <button type="button" class="tile" data-bond-bed="3" data-bond-bath="2"><span class="tile-size">3 bed, 2 bath</span><span class="tile-price">$529</span><span class="tile-sub">Bond clean</span></button>
+          <button type="button" class="tile" data-bond-bed="2" data-bond-bath="2"><span class="tile-size">2 bed, 2 bath</span><span class="tile-price">$448</span><span class="tile-sub">Bond clean</span></button>
+          <button type="button" class="tile" data-bond-bed="4" data-bond-bath="2"><span class="tile-size">4 bed, 2 bath</span><span class="tile-price">$610</span><span class="tile-sub">Bond clean</span></button>
+          <button type="button" class="tile" data-bond-bed="5" data-bond-bath="3"><span class="tile-size">5 bed, 3 bath</span><span class="tile-price">$720</span><span class="tile-sub">Bond clean</span></button>
+        </div>
+        <p class="tiles-note">Tap a size to load it into the calculator. Wall marks, oven and carpet steam quoted on the spot, in writing, before we start.</p>
+        <div class="guarantee-card">
+          <span class="smiley" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="44" height="44"><circle cx="24" cy="24" r="22" fill="#ffc400"/><circle cx="17" cy="20" r="2.6" fill="#0b2e3d"/><circle cx="31" cy="20" r="2.6" fill="#0b2e3d"/><path d="M15 30c2.5 3.6 5.6 5.4 9 5.4S30.5 33.6 33 30" stroke="#0b2e3d" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+          </span>
+          <div>
+            <h3>The 72-hour re-clean guarantee</h3>
+            <p>If your agent flags anything within 72 hours of the clean, we come back and re-clean it free. No forms, no arguments. It is why 97% of our bond cleans pass first inspection.</p>
+          </div>
+        </div>
+      </div>
+      <div class="bond-right">
+        <div class="report-card" aria-label="Example entry condition report checklist">
+          <p class="report-head"><span>Entry condition report</span><span class="report-pill">3 bed house</span></p>
+          <ul class="report-rows">
+            <li><span class="r-check" aria-hidden="true">✓</span> Kitchen: oven, rangehood, benches <span class="r-status">Done</span></li>
+            <li><span class="r-check" aria-hidden="true">✓</span> Bathrooms: glass, grout, mirrors <span class="r-status">Done</span></li>
+            <li><span class="r-check" aria-hidden="true">✓</span> Walls: marks and scuffs <span class="r-status">Done</span></li>
+            <li><span class="r-check" aria-hidden="true">✓</span> Floors: mop, skirting, steam <span class="r-status">Done</span></li>
+            <li><span class="r-check" aria-hidden="true">✓</span> Windows: inside glass and tracks <span class="r-status">Done</span></li>
+            <li><span class="r-check" aria-hidden="true">✓</span> Final: photo report sent to you <span class="r-status">Done</span></li>
+          </ul>
+        </div>
+        <img class="drift drift-bucket" src="img/bucket.png" alt="" aria-hidden="true" data-drift="0.35">
+      </div>
+    </div>
+    <img class="drift drift-bond" src="img/spray.png" alt="" aria-hidden="true" data-drift="0.6">
+  </section>
+
+  <!-- STEPS -->
+  <section class="section wrap steps-sec">
+    <img class="drift drift-steps" src="img/sponge.png" alt="" aria-hidden="true" data-drift="0.45">
+    <p class="eyebrow">How it works</p>
+    <h2>Booked in a minute,<br>and the quote doesn't move.</h2>
+    <div class="steps-grid">
+      <article class="step-col">
+        <p class="step-num">01</p>
+        <h3>Get your exact price</h3>
+        <p>Pick your clean, your size and your extras. The price builds on screen as you go, every line shown. Nothing is added later.</p>
+      </article>
+      <article class="step-col">
+        <p class="step-num">02</p>
+        <h3>Pick a time that suits</h3>
+        <p>Choose a day and an arrival window. We confirm by text straight away, then text you again 20 minutes out, every visit.</p>
+      </article>
+      <article class="step-col">
+        <p class="step-num">03</p>
+        <h3>We clean, you check</h3>
+        <p>The same two cleaners each visit, everything supplied. A photo report lands in your inbox before we have even left the street.</p>
+      </article>
+      <article class="step-col">
+        <p class="step-num">04</p>
+        <h3>Bond back, guaranteed</h3>
+        <p>Moving out? The clean is worked against your entry condition report and backed by the 72-hour re-clean guarantee.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- COMMERCIAL -->
+  <section class="commercial" id="commercial">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-light">Commercial</p>
+      <h2 class="comm-h">Offices, clinics and strata, cleaned after hours.</h2>
+      <p class="comm-sub">After-hours teams, a fixed per-visit price and a monthly walk-through report. Set your site up once and the estimate builds itself.</p>
+      <div class="comm-grid">
+        <div class="comm-controls">
+          <fieldset>
+            <legend>Type of site</legend>
+            <div class="site-chips" role="radiogroup" aria-label="Type of site">
+              <label class="site-chip"><input type="radio" name="siteType" value="office" checked><span>Office</span></label>
+              <label class="site-chip"><input type="radio" name="siteType" value="medical"><span>Medical or dental</span></label>
+              <label class="site-chip"><input type="radio" name="siteType" value="childcare"><span>Childcare</span></label>
+              <label class="site-chip"><input type="radio" name="siteType" value="retail"><span>Retail or gym</span></label>
+              <label class="site-chip"><input type="radio" name="siteType" value="strata"><span>Strata common areas</span></label>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Floor area <span class="area-read" id="areaRead">580 m²</span></legend>
+            <input type="range" id="areaRange" min="50" max="3000" step="10" value="580" aria-label="Floor area in square metres">
+            <div class="range-scale"><span>50 m²</span><span>3,000 m²</span></div>
+          </fieldset>
+          <fieldset>
+            <legend>Visits a week</legend>
+            <div class="visits" role="radiogroup" aria-label="Visits a week">
+              <label class="visit-opt"><input type="radio" name="visits" value="1"><span>1</span></label>
+              <label class="visit-opt"><input type="radio" name="visits" value="2" checked><span>2</span></label>
+              <label class="visit-opt"><input type="radio" name="visits" value="3"><span>3</span></label>
+              <label class="visit-opt"><input type="radio" name="visits" value="5"><span>5</span></label>
+            </div>
+          </fieldset>
+        </div>
+        <aside class="comm-card" aria-label="Your commercial estimate">
+          <img class="drift drift-comm" src="img/spray.png" alt="" aria-hidden="true" data-drift="0.5">
+          <p class="price-micro price-micro-navy">Estimated price, per visit</p>
+          <p class="comm-total" id="commTotal">$120</p>
+          <p class="comm-week" id="commWeek">About $240 a week for 2 visits, GST included</p>
+          <ul class="comm-includes">
+            <li><span class="tick" aria-hidden="true">✓</span> All consumables and equipment supplied</li>
+            <li><span class="tick" aria-hidden="true">✓</span> After-hours access, alarm trained team</li>
+            <li><span class="tick" aria-hidden="true">✓</span> Monthly photo walk-through report</li>
+            <li><span class="tick" aria-hidden="true">✓</span> Same team every visit</li>
+          </ul>
+          <button type="button" class="btn btn-navy btn-block" id="walkBtn" aria-expanded="false">Book a free site walk <span aria-hidden="true">→</span></button>
+          <form class="walk-form" id="walkForm" hidden novalidate>
+            <label class="field-label" for="wkBiz">Business name</label>
+            <input class="text-input" type="text" id="wkBiz" placeholder="Example Dental, Fortitude Valley">
+            <label class="field-label" for="wkContact">Work email or mobile</label>
+            <input class="text-input" type="text" id="wkContact" placeholder="name@business.com.au">
+            <p class="field-error" id="walkError" hidden>Add your business name and a contact so we can book the walk.</p>
+            <button type="submit" class="btn btn-yellow btn-block">Request site walk</button>
+          </form>
+          <p class="walk-done" id="walkDone" hidden><span class="tick" aria-hidden="true">✓</span> Site walk requested. We will be in touch within one business day to lock in a time.</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="section wrap" id="reviews">
+    <p class="eyebrow">Reviews</p>
+    <h2>Neighbours who book on repeat.</h2>
+    <div class="reviews-grid">
+      <article class="review-card">
+        <div class="reviewer">
+          <img src="img/rev-sarah.jpg" alt="Portrait of Sarah Mitchell" width="96" height="96">
+          <div><p class="rev-name">Sarah Mitchell</p><p class="rev-meta">Paddington · Fortnightly regular</p></div>
+        </div>
+        <p class="stars" aria-label="5 out of 5 stars">★★★★★</p>
+        <p class="rev-text">A year of fortnightly cleans now. Same two cleaners, a text before they arrive, and the price has never moved a dollar: $220 a fortnight for our 3 bed, exactly what the site quoted.</p>
+      </article>
+      <article class="review-card">
+        <div class="reviewer">
+          <img src="img/rev-mick.jpg" alt="Portrait of Mick Donnelly" width="96" height="96">
+          <div><p class="rev-name">Mick Donnelly</p><p class="rev-meta">Everton Park · Bond clean</p></div>
+        </div>
+        <p class="stars" aria-label="5 out of 5 stars">★★★★★</p>
+        <p class="rev-text">Bond back in full. The agent flagged two marks on a wall and Saltbush were back the next morning and fixed it free, inside the 72 hours, no argument at all.</p>
+      </article>
+      <article class="review-card">
+        <div class="reviewer">
+          <img src="img/rev-priya.jpg" alt="Portrait of Priya Nair" width="96" height="96">
+          <div><p class="rev-name">Priya Nair</p><p class="rev-meta">Indooroopilly · Deep clean</p></div>
+        </div>
+        <p class="stars" aria-label="5 out of 5 stars">★★★★★</p>
+        <p class="rev-text">Booked a deep clean at 9 pm and had the exact price on screen in under a minute. The photo report afterwards was more thorough than my own inspection.</p>
+      </article>
+      <article class="review-card">
+        <div class="reviewer">
+          <img src="img/rev-dave.jpg" alt="Portrait of Dave Carter" width="96" height="96">
+          <div><p class="rev-name">Dave Carter</p><p class="rev-meta">Eagle Farm · Office, 3 nights a week</p></div>
+        </div>
+        <p class="stars" aria-label="5 out of 5 stars">★★★★★</p>
+        <p class="rev-text">They clean our office after hours, three nights a week. One fixed price per visit, one invoice, and the walk-through report lands in my inbox every month.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section wrap faq-sec" id="faq">
+    <div class="faq-grid">
+      <div>
+        <p class="eyebrow">Questions</p>
+        <h2>Before you book.</h2>
+        <p class="section-side">Straight answers, no fine print. Anything else, call us on <a class="inline-link" href="tel:+61731842260">(07) 3184 2260</a>.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Is the bond clean guaranteed?<span class="faq-ico" aria-hidden="true">+</span></button>
+          <div class="faq-a" hidden><p>Yes. Every bond clean is backed for 72 hours. If your agent or property manager flags anything from the clean in that window, we return and re-clean it free. 97% of our bond cleans pass the first inspection.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Do you clean strata common areas?<span class="faq-ico" aria-hidden="true">+</span></button>
+          <div class="faq-a" hidden><p>We do. Lobbies, lifts, stairwells, car parks and pool areas for bodies corporate across Brisbane, on a fixed per-visit price with a monthly photo report for the committee.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">How do I pay?<span class="faq-ico" aria-hidden="true">+</span></button>
+          <div class="faq-a" hidden><p>Card on file, charged after the clean is done and the photo report is sent. No payment upfront for regular cleans, and invoices for commercial sites are monthly in arrears.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Who brings the products and equipment?<span class="faq-ico" aria-hidden="true">+</span></button>
+          <div class="faq-a" hidden><p>We do, all of it: vacuums, mops, steam gear and products. If you prefer your own products used, leave them out and note it in the booking, no change to the price.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Can I skip or reschedule a clean?<span class="faq-ico" aria-hidden="true">+</span></button>
+          <div class="faq-a" hidden><p>Any time, free, up to 24 hours before the visit, from the link in your confirmation text. There is no lock-in contract on regular cleans, ever.</p></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">Are your cleaners police checked?<span class="faq-ico" aria-hidden="true">+</span></button>
+          <div class="faq-a" hidden><p>Yes. Every Saltbush cleaner is an employee, not a contractor, police checked before their first visit and covered by $20m public liability insurance.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-cta">
+      <h2>Your price is <span class="hl">30 seconds</span> away.</h2>
+      <img class="drift drift-foot" src="img/spray.png" alt="" aria-hidden="true" data-drift="0.4">
+      <div class="foot-ctas">
+        <a class="btn btn-yellow" href="#quote">See my price</a>
+        <a class="btn btn-darkpill" href="#bond">Bond cleans</a>
+      </div>
+    </div>
+
+    <div class="foot-panel" id="areasPanel" hidden>
+      <h3>Areas we clean</h3>
+      <p>Paddington, Indooroopilly, Everton Park, Fortitude Valley, Eagle Farm, New Farm, Toowong, Ashgrove, Bulimba, Hawthorne, West End, Kangaroo Point, Chermside, Mount Gravatt and everywhere in between. Commercial sites across greater Brisbane.</p>
+    </div>
+    <div class="foot-panel" id="jobsPanel" hidden>
+      <h3>Cleaning jobs</h3>
+      <p>We hire employees, not contractors: police check paid for, gear and car provided, weekday and after-hours teams. Send your name, suburb and availability to <a class="inline-link light" href="mailto:jobs@saltbushcleaning.co">jobs@saltbushcleaning.co</a> and we will call you back within two business days.</p>
+    </div>
+
+    <div class="foot-grid">
+      <div class="foot-col">
+        <h3>Homes</h3>
+        <ul>
+          <li><button type="button" class="foot-link" data-goto-clean="regular">Regular cleans</button></li>
+          <li><button type="button" class="foot-link" data-goto-clean="deep">Deep cleans</button></li>
+          <li><button type="button" class="foot-link" data-goto-clean="bond">Bond cleans</button></li>
+          <li><button type="button" class="foot-link" data-goto-extras>Oven and windows</button></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h3>Business</h3>
+        <ul>
+          <li><button type="button" class="foot-link" data-goto-site="office">Offices</button></li>
+          <li><button type="button" class="foot-link" data-goto-site="medical">Medical and dental</button></li>
+          <li><button type="button" class="foot-link" data-goto-site="childcare">Childcare</button></li>
+          <li><button type="button" class="foot-link" data-goto-site="strata">Strata</button></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h3>Company</h3>
+        <ul>
+          <li><a class="foot-link" href="tel:+61731842260">(07) 3184 2260</a></li>
+          <li><a class="foot-link" href="mailto:hello@saltbushcleaning.co">hello@saltbushcleaning.co</a></li>
+          <li><button type="button" class="foot-link" id="areasBtn" aria-expanded="false">Areas we clean</button></li>
+          <li><button type="button" class="foot-link" id="jobsBtn" aria-expanded="false">Cleaning jobs</button></li>
+        </ul>
+      </div>
+      <div class="foot-col foot-address">
+        <h3>Find us</h3>
+        <p>14/88 Creek Street<br>Brisbane QLD 4000</p>
+        <p>Mon to Sat<br>7:00 am to 6:00 pm</p>
+      </div>
+    </div>
+
+    <p class="foot-wordmark">saltbush <span>Cleaning Co</span></p>
+    <p class="foot-legal">© 2026 Saltbush Cleaning Co · ABN 24 631 884 205 · All prices include GST · Bond re-clean guarantee terms on every booking confirmation</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
